@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bikramghuku-website/static/css/main.a71fcc38.chunk.css",
+    "main.css": "/bikramghuku-website/static/css/main.3a900eec.chunk.css",
     "main.js": "/bikramghuku-website/static/js/main.9463b76c.chunk.js",
     "main.js.map": "/bikramghuku-website/static/js/main.9463b76c.chunk.js.map",
     "runtime-main.js": "/bikramghuku-website/static/js/runtime-main.3d335507.js",
@@ -8,14 +8,14 @@
     "static/js/2.8e0937aa.chunk.js": "/bikramghuku-website/static/js/2.8e0937aa.chunk.js",
     "static/js/2.8e0937aa.chunk.js.map": "/bikramghuku-website/static/js/2.8e0937aa.chunk.js.map",
     "index.html": "/bikramghuku-website/index.html",
-    "static/css/main.a71fcc38.chunk.css.map": "/bikramghuku-website/static/css/main.a71fcc38.chunk.css.map",
+    "static/css/main.3a900eec.chunk.css.map": "/bikramghuku-website/static/css/main.3a900eec.chunk.css.map",
     "static/js/2.8e0937aa.chunk.js.LICENSE.txt": "/bikramghuku-website/static/js/2.8e0937aa.chunk.js.LICENSE.txt",
     "static/media/me.350bb1d8.jpg": "/bikramghuku-website/static/media/me.350bb1d8.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.3d335507.js",
     "static/js/2.8e0937aa.chunk.js",
-    "static/css/main.a71fcc38.chunk.css",
+    "static/css/main.3a900eec.chunk.css",
     "static/js/main.9463b76c.chunk.js"
   ]
 }
