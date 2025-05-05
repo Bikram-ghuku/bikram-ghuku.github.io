@@ -74,7 +74,7 @@ body.dark-mode {
 }
 
 .content {
-  padding-top: 70px;
+  /* Removing the top padding that was creating the gray border */
 }
 
 h1, h2, h3, h4, h5, h6 {

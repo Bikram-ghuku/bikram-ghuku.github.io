@@ -1,109 +1,285 @@
 .c {
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    transition: all 0.3s ease;
+}
+
+.c.dark {
+    --card-bg: rgba(30, 30, 40, 0.7);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --input-bg: rgba(25, 25, 35, 0.5);
+    --input-border: rgba(100, 150, 255, 0.2);
+    --input-text: rgba(230, 240, 255, 0.8);
+    --input-focus-border: rgba(100, 150, 255, 0.8);
+    --input-placeholder: rgba(200, 215, 255, 0.5);
+    --button-bg: linear-gradient(135deg, #4e86ff, #6ba4ff);
+    --button-hover-bg: linear-gradient(135deg, #3d75ee, #5a93ff);
+    --button-shadow: rgba(65, 105, 225, 0.3);
+    --success-bg: rgba(50, 205, 50, 0.15);
+    --success-border: rgba(50, 205, 50, 0.3);
+    --success-text: #5cdb5c;
+    --error-bg: rgba(255, 99, 71, 0.15);
+    --error-border: rgba(255, 99, 71, 0.3);
+    --error-text: #ff6e67;
+    --config-bg: rgba(255, 165, 0, 0.15);
+    --config-border: rgba(255, 165, 0, 0.3);
+    --config-text: #ffa94d;
 }
 
 .c-bg {
     width: 20px;
     height: 100%;
-    background-color: #688eff;
+    background-color: var(--primary-color);
     position: absolute;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+
+.dark .c-bg {
+    background-color: #4e86ff;
+    box-shadow: 0 0 20px rgba(78, 134, 255, 0.3);
 }
 
 .c-wrapper {
-    padding: 50px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
     display: flex;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
 .c-left {
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .c-right {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: relative;
 }
 
 .c-title {
-    font-size: 60px;
-    width: 80%;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.dark .c-title {
+    color: rgba(230, 240, 255, 0.95);
+    text-shadow: 0 2px 10px rgba(78, 134, 255, 0.2);
+}
+
+.c-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.dark .c-title::after {
+    background: linear-gradient(135deg, #4e86ff, #6ba4ff);
+}
+
+.c-info {
+    margin-top: 1rem;
 }
 
 .c-info-item {
     display: flex;
     align-items: center;
-    margin: 50px 0px;
-    font-weight: 300;
-    width: 70%;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.dark .c-info-item {
+    color: rgba(200, 215, 255, 0.8);
 }
 
 .c-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 20px;
-}
-  
-.c-desc {
-    font-weight: 200;
-}
-  
-form {
-    margin-top: 20px;
-}
-  
-input {
-    width: 50%;
-    height: 50px;
-    border: none;
-    border-bottom: 1px solid black;
-    margin: 10px 0px;
-    font-size: 14px;
-    padding-left: 10px;
-}
-  
-textarea {
-    width: 100%;
-    margin: 10px 0px;
-    font-size: 14px;
-    padding-left: 10px;
-}
-  
-button {
-    border: none;
-    padding: 15px;
-    background-color: #688eff;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-right: 1rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
-/* New styles for form validation and status */
-.c-btn {
+.dark .c-icon {
+    color: #4e86ff;
+}
+
+.c-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
     transition: all 0.3s ease;
-    min-width: 120px;
+}
+
+.dark .c-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.c-desc {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.dark .c-desc {
+    color: rgba(200, 215, 255, 0.75);
+}
+
+.c-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.c-input, 
+.c-textarea {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.dark .c-input, 
+.dark .c-textarea {
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--input-text);
+}
+
+.c-input {
+    height: 3rem;
+}
+
+.c-textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
+.c-input::placeholder, 
+.c-textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.dark .c-input::placeholder, 
+.dark .c-textarea::placeholder {
+    color: var(--input-placeholder);
+}
+
+.c-input:focus, 
+.c-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+}
+
+.dark .c-input:focus, 
+.dark .c-textarea:focus {
+    border-color: var(--input-focus-border);
+    box-shadow: 0 0 0 2px rgba(78, 134, 255, 0.2);
+}
+
+.c-input:disabled,
+.c-textarea:disabled {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.dark .c-input:disabled,
+.dark .c-textarea:disabled {
+    background-color: rgba(20, 20, 30, 0.3);
+    border-color: rgba(100, 150, 255, 0.1);
+}
+
+/* Buttons */
+.c-btn {
+    height: 3rem;
+    padding: 0 2rem;
+    background: var(--primary-gradient);
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.3);
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.dark .c-btn {
+    background: var(--button-bg);
+    box-shadow: 0 8px 20px var(--button-shadow);
 }
 
 .c-btn:hover {
-    background-color: #5172d9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(104, 142, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(var(--primary-rgb), 0.4);
+}
+
+.dark .c-btn:hover {
+    background: var(--button-hover-bg);
+    box-shadow: 0 12px 25px rgba(65, 105, 225, 0.4);
 }
 
 .c-btn:disabled {
-    background-color: #a4b7ec;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.5), rgba(var(--secondary-rgb), 0.5));
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
 }
 
+.dark .c-btn:disabled {
+    background: linear-gradient(135deg, rgba(78, 134, 255, 0.5), rgba(107, 164, 255, 0.5));
+}
+
 .c-btn-loading {
-    background-color: #5172d9;
+    padding-right: 3rem;
 }
 
 .c-btn-loading::after {
@@ -115,8 +291,7 @@ button {
     border-radius: 50%;
     border-top-color: white;
     animation: spin 1s ease-in-out infinite;
-    right: 15px;
-    top: calc(50% - 10px);
+    right: 1rem;
 }
 
 @keyframes spin {
@@ -125,14 +300,15 @@ button {
     }
 }
 
+/* Status messages */
 .c-error-message, 
 .c-success-message,
 .c-config-error {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    font-size: 14px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    font-size: 0.95rem;
     font-weight: 500;
     text-align: center;
 }
@@ -143,61 +319,79 @@ button {
     border: 1px solid rgba(255, 99, 71, 0.3);
 }
 
+.dark .c-error-message {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
+}
+
 .c-success-message {
     background-color: rgba(50, 205, 50, 0.1);
     color: limegreen;
     border: 1px solid rgba(50, 205, 50, 0.3);
 }
 
+.dark .c-success-message {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid var(--success-border);
+}
+
 .c-config-error {
     background-color: rgba(255, 165, 0, 0.1);
     color: #ff8c00;
     border: 1px solid rgba(255, 165, 0, 0.3);
-    padding: 15px;
+    padding: 1.2rem;
+}
+
+.dark .c-config-error {
+    background-color: var(--config-bg);
+    color: var(--config-text);
+    border: 1px solid var(--config-border);
 }
 
 .c-config-error p {
-    margin: 5px 0;
+    margin: 0.4rem 0;
 }
 
-.c-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-input:focus, 
-textarea:focus {
-    outline: none;
-    border-bottom: 2px solid #688eff;
-}
-
-input:disabled,
-textarea:disabled {
-    background-color: rgba(0, 0, 0, 0.05);
-    cursor: not-allowed;
-    opacity: 0.7;
-}
-
-@media screen and (max-width : 600px) {
+/* Responsive styles */
+@media screen and (max-width: 992px) {
     .c-wrapper {
         flex-direction: column;
-        padding: 0px 50px;
+        gap: 2rem;
     }
+}
 
-    .c-title{
-        font-size: 40px;
-    }
-
-    .c-info-item {
-        width: 100%;
-    }
-
-    .c-desc{
-        display: none;
+@media screen and (max-width: 768px) {
+    .c-title {
+        font-size: 2.5rem;
     }
     
-    input {
-        width: 100%;
+    .c-info-item {
+        font-size: 1rem;
+    }
+    
+    .c-desc {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .c-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .c-title {
+        font-size: 2rem;
+    }
+    
+    .c-card {
+        padding: 1.5rem;
+    }
+    
+    .c-input, 
+    .c-textarea,
+    .c-btn {
+        font-size: 0.95rem;
     }
 }

@@ -5,7 +5,7 @@ import emailjs from 'emailjs-com'
 import { EMAILJS_CONFIG } from '../../services/emailjs-config'
 import './contact.css'
 
-function Contact() {
+function Contact({ darkMode }) {
   const formRef = useRef();
   const [formData, setFormData] = useState({
     user_name: '',
@@ -155,7 +155,7 @@ function Contact() {
   };
 
   return (
-    <div className='c'>
+    <div className={`c ${darkMode ? 'dark' : ''}`} id="contact">
         <div className="c-bg"></div>
         <div className="c-wrapper">
             <div className="c-left">
@@ -172,7 +172,6 @@ function Contact() {
                 </div>
             </div>
             <div className="c-right">
-                <div className="c-card bg"></div>
                 <div className="c-card">
                     <p className='c-desc'>
                         Message me to talk about anything. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.
@@ -185,6 +184,7 @@ function Contact() {
                             value={formData.user_name}
                             onChange={handleChange}
                             disabled={formStatus.configError}
+                            className="c-input"
                         />
                         <input 
                             type="text" 
@@ -193,6 +193,7 @@ function Contact() {
                             value={formData.user_subject}
                             onChange={handleChange}
                             disabled={formStatus.configError}
+                            className="c-input"
                         />
                         <input 
                             type="text" 
@@ -201,6 +202,7 @@ function Contact() {
                             value={formData.user_email}
                             onChange={handleChange}
                             disabled={formStatus.configError}
+                            className="c-input"
                         />
                         <textarea 
                             rows="5" 
@@ -209,6 +211,7 @@ function Contact() {
                             value={formData.message}
                             onChange={handleChange}
                             disabled={formStatus.configError}
+                            className="c-textarea"
                         />
                         
                         {formStatus.error && (
