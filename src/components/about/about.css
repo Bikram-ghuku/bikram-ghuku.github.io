@@ -3,10 +3,25 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 2rem 0;
     background-color: var(--background-color);
     color: var(--text-color);
     transition: all 0.3s ease;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.about-container {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    justify-content: space-between;
 }
 
 .a.dark-mode {
@@ -16,7 +31,7 @@
 }
 
 .a-left {
-    flex: 1;
+    flex: 0.9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,8 +40,12 @@
 }
 
 .a-right {
-    flex: 1;
-    padding: 0 1rem;
+    flex: 1.1;
+    padding: 0 1rem 0 2rem;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .a-card.bg {
@@ -66,6 +85,7 @@
     color: var(--text-color);
     position: relative;
     display: inline-block;
+    width: 100%;
 }
 
 .a-title::after {
@@ -81,7 +101,8 @@
 
 .a-sub {
     margin: 20px 0px;
-    width: 90%;
+    width: 100%;
+    max-width: none;
     line-height: 1.6;
     color: var(--text-secondary);
 }
@@ -114,6 +135,7 @@
     gap: 1.5rem;
     flex-wrap: wrap;
     margin-top: 1.5rem;
+    width: 100%;
 }
 
 .a-icon {
@@ -137,7 +159,8 @@
 
 .a-expertise {
     margin: 2rem 0;
-    width: 90%;
+    width: 100%;
+    max-width: none;
 }
 
 .a-expertise h3 {
@@ -164,6 +187,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin-top: 1.5rem;
+    width: 100%;
 }
 
 .expertise-item {
@@ -173,6 +197,9 @@
     box-shadow: var(--box-shadow);
     transition: all 0.3s ease;
     border-left: 3px solid var(--expertise-border, var(--primary-color));
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .expertise-item:hover {
@@ -184,12 +211,14 @@
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
+    width: 100%;
 }
 
 .expertise-item p {
     font-size: 0.9rem;
     line-height: 1.5;
     color: var(--text-secondary);
+    width: 100%;
 }
 
 /* Large screens */
@@ -218,13 +247,19 @@
 
 /* Small screens - tablets and large phones */
 @media screen and (max-width: 768px) {
-    .a {
+    .about-container {
         flex-direction: column;
         gap: 2rem;
+        padding: 1rem;
     }
     
     .a-left, .a-right {
         width: 100%;
+        padding: 0;
+    }
+    
+    .a-right {
+        padding: 0;
     }
     
     .a-card {
