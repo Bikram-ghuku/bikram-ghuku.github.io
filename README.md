@@ -2,6 +2,29 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Environment Variables
+
+For the contact form to work, you need to create a `.env` file in the project root with the following variables:
+
+```
+# EmailJS configuration
+REACT_APP_EMAILJS_SERVICE_ID=your_service_id
+REACT_APP_EMAILJS_TEMPLATE_ID=your_template_id
+REACT_APP_EMAILJS_USER_ID=your_user_id
+```
+
+To get these values:
+1. Sign up at [EmailJS](https://www.emailjs.com/)
+2. Create a new service (Gmail, Outlook, etc.)
+3. Create an email template with the following variables:
+   - `{{user_name}}`
+   - `{{user_email}}`
+   - `{{user_subject}}`
+   - `{{message}}`
+4. Get your User ID from the Integration section of your EmailJS dashboard
+5. Get your Service ID from the Services section
+6. Get your Template ID from the Email Templates section
+
 ## Available Scripts
 
 In the project directory, you can run:

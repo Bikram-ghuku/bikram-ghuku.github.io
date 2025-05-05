@@ -50,3 +50,250 @@
         font-size: 0.5rem;
     }
 }
+
+.education-section {
+  padding: 6rem 0;
+  background-color: var(--background-color);
+  transition: var(--transition);
+  min-height: 100vh;
+}
+
+.education-section.dark {
+  background-color: var(--background-color);
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--primary-color), rgba(0, 112, 243, 0.2));
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 50%;
+  margin-left: -9px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 4px var(--background-color);
+  transition: var(--transition);
+}
+
+.timeline-content {
+  position: relative;
+  width: calc(50% - 40px);
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  transition: var(--transition);
+  border-top: 4px solid var(--primary-color);
+  margin-left: auto;
+  overflow: hidden;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 1rem;
+  position: relative;
+}
+
+.institution-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--border-color);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+}
+
+.institution-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.timeline-title {
+  flex-grow: 1;
+}
+
+.timeline-title h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.timeline-title h4 {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-title .field {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 0;
+}
+
+.expand-icon {
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.timeline-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.info-item svg {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+.info-item a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.info-item a:hover {
+  text-decoration: underline;
+}
+
+.timeline-details {
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.timeline-details .description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  color: var(--text-color);
+}
+
+.timeline-details h5 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.timeline-details h5::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 2px;
+  background-color: var(--primary-color);
+  bottom: 0;
+  left: 0;
+}
+
+.timeline-details ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.timeline-details li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  color: var(--text-color);
+}
+
+.courses, .achievements {
+  margin-bottom: 1.2rem;
+}
+
+@media screen and (max-width: 992px) {
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-dot {
+    left: 20px;
+    margin-left: 0;
+  }
+  
+  .timeline-content {
+    width: calc(100% - 60px);
+    margin-left: 60px !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .institution-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .expand-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timeline-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

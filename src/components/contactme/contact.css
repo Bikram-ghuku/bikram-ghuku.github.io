@@ -80,6 +80,105 @@ button {
     cursor: pointer;
 }
 
+/* New styles for form validation and status */
+.c-btn {
+    transition: all 0.3s ease;
+    min-width: 120px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.c-btn:hover {
+    background-color: #5172d9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(104, 142, 255, 0.3);
+}
+
+.c-btn:disabled {
+    background-color: #a4b7ec;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.c-btn-loading {
+    background-color: #5172d9;
+}
+
+.c-btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    right: 15px;
+    top: calc(50% - 10px);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.c-error-message, 
+.c-success-message,
+.c-config-error {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.c-error-message {
+    background-color: rgba(255, 99, 71, 0.1);
+    color: tomato;
+    border: 1px solid rgba(255, 99, 71, 0.3);
+}
+
+.c-success-message {
+    background-color: rgba(50, 205, 50, 0.1);
+    color: limegreen;
+    border: 1px solid rgba(50, 205, 50, 0.3);
+}
+
+.c-config-error {
+    background-color: rgba(255, 165, 0, 0.1);
+    color: #ff8c00;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    padding: 15px;
+}
+
+.c-config-error p {
+    margin: 5px 0;
+}
+
+.c-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+input:focus, 
+textarea:focus {
+    outline: none;
+    border-bottom: 2px solid #688eff;
+}
+
+input:disabled,
+textarea:disabled {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
 @media screen and (max-width : 600px) {
     .c-wrapper {
         flex-direction: column;
@@ -96,5 +195,9 @@ button {
 
     .c-desc{
         display: none;
+    }
+    
+    input {
+        width: 100%;
     }
 }

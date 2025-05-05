@@ -1,65 +1,177 @@
-.sk{
-    height: 100vh;
-    font-family: 'Poppins', sans-serif;
+.skills-section {
+  padding: 6rem 0;
+  background-color: var(--background-color);
+  transition: var(--transition);
 }
 
-.sk-title{
-    text-align: center;
-    font-size: 3rem;
-    padding-top: 5vh;
-    font-weight: 600;
+.skills-section.dark {
+  background-color: var(--background-color);
 }
 
-.sk-container{
-    padding-left: 5vw;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.sk-card{
-    width: 10vw;
-    height: 20vh;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 2vh;
-    padding: 2vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.skill-category {
+  margin-bottom: 2rem;
 }
 
-.sk-card:hover{
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+.category-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
 }
 
-.sk-img{
-    display: block;
-    max-width: 7vw;
-    max-height: 15vh;
-    height: auto;
-    width: auto;
+.category-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
 }
 
-.sk-img-cont{
-    padding-top: 2vh;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
 }
 
-@media screen and (max-width: 600px) {
-    .sk-container{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .sk-card{
-        font-size: small;
-        padding: 1vh;
-        width: 15vw;
-        height: 10vh;
-    }
+.skill-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-    .sk-img{
-        width: 13vw;
-        height: 7vh;
-    }
+.skill-img-container {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* GitHub Skills Stats Styling */
+.github-stats {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(var(--card-bg-rgb), 0.6);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--box-shadow);
+}
+
+.github-repo-count {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.language-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.language-stat-item {
+  position: relative;
+}
+
+.language-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.language-name {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.language-percentage {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.language-bar-container {
+  height: 8px;
+  background-color: rgba(var(--card-bg-rgb), 0.8);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.language-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+}
+
+.repo-count {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+@media screen and (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .category-title {
+    font-size: 1.5rem;
+  }
+  
+  .github-stats {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 1rem;
+  }
+  
+  .skill-img-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .skill-name {
+    font-size: 0.8rem;
+  }
+  
+  .github-stats {
+    padding: 1rem;
+  }
 }

@@ -1,21 +1,68 @@
 import React from 'react'
 import './skills.css'
 import { skills_data } from '../../skills'
+import { motion } from 'framer-motion'
 
-function Skills() {
+function Skills({ darkMode }) {
+  const categories = {
+    'Languages': ['Python', 'Javascript', 'HTML', 'CSS', 'Rust', 'Go'],
+    'Frameworks & Libraries': ['React', 'Node', 'Express', 'Bootstrap', 'MaterialUI', 'Next.js', 'LangChain', 'LangGraph'],
+    'Databases': ['MongoDB', 'PostgreSQL'],
+    'Tools & Technologies': ['Git', 'Github', 'Docker', 'Kubernetes']
+  }
+
+  const getSkillsByCategory = (category) => {
+    return skills_data.filter(skill => 
+      categories[category].includes(skill.Name)
+    )
+  }
+
   return (
-    <div className='sk'>
-        <h1 className="sk-title">Skills</h1>
-        <div className="sk-container">
-            {skills_data.map((skill, index) => (
-                <div className="sk-card" key={index}>
-                    <div className="sk-img-cont">
-                        <img src={skill.img} alt="skill" className='sk-img'/>
+    <div className={`skills-section ${darkMode ? 'dark' : ''}`} id="skills">
+      <div className="container">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          My Skills
+        </motion.h2>
+        
+        <div className="skills-content">
+          {Object.keys(categories).map((category, categoryIndex) => (
+            <motion.div 
+              key={categoryIndex} 
+              className="skill-category"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+            >
+              <h3 className="category-title">{category}</h3>
+              <div className="skills-grid">
+                {getSkillsByCategory(category).map((skill, skillIndex) => (
+                  <motion.div 
+                    className="skill-card" 
+                    key={skill.id}
+                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: skillIndex * 0.05 + categoryIndex * 0.1 }}
+                  >
+                    <div className="skill-img-container">
+                      <img src={skill.img} alt={skill.Name} className="skill-img" />
                     </div>
-                    <div className="sk-name">{skill.Name}</div>
-                </div>
-            ))}
+                    <h4 className="skill-name">{skill.Name}</h4>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
+      </div>
     </div>
   )
 }

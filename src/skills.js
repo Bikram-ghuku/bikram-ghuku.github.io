@@ -76,4 +76,47 @@ export const skills_data = [
         Name: "Docker",
         url:"https://www.docker.com/",
         img: "https://1000logos.net/wp-content/uploads/2021/11/Docker-Logo-500x281.png"
-    }]
+    },
+    {
+        id: 15,
+        Name: "Rust",
+        url: "https://www.rust-lang.org/",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/1024px-Rust_programming_language_black_logo.svg.png"
+    },
+    {
+        id: 16,
+        Name: "Go",
+        url: "https://golang.org/",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png"
+    },
+    {
+        id: 17,
+        Name: "PostgreSQL",
+        url: "https://www.postgresql.org/",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png"
+    },
+    {
+        id: 18,
+        Name: "Kubernetes",
+        url: "https://kubernetes.io/",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/1200px-Kubernetes_logo_without_workmark.svg.png"
+    },
+    {
+        id: 19,
+        Name: "LangChain",
+        url: "https://langchain.com/",
+        img: "https://avatars.githubusercontent.com/u/126733545?s=200&v=4"
+    },
+    {
+        id: 20,
+        Name: "LangGraph",
+        url: "https://www.langchain.com/langgraph",
+        img: "https://www.langchain.com/langchain-and-langgraph.svg"
+    },
+    {
+        id: 21,
+        Name: "Next.js",
+        url: "https://nextjs.org/",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/800px-Nextjs-logo.svg.png"
+    }
+]
