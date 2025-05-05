@@ -86,7 +86,30 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is configured to automatically deploy to GitHub Pages using GitHub Actions.
+
+#### Automatic Deployment
+
+A GitHub Actions workflow is set up to automatically build and deploy the site to GitHub Pages whenever changes are pushed to the main branch.
+
+To set up the required secrets for the contact form:
+
+1. Go to your GitHub repository
+2. Navigate to Settings > Secrets and variables > Actions
+3. Add the following repository secrets:
+   - `REACT_APP_EMAILJS_SERVICE_ID`: Your EmailJS Service ID
+   - `REACT_APP_EMAILJS_TEMPLATE_ID`: Your EmailJS Template ID
+   - `REACT_APP_EMAILJS_USER_ID`: Your EmailJS User ID (public key)
+
+#### Manual Deployment
+
+You can also deploy the site manually using:
+
+```bash
+npm run deploy
+```
+
+This will build the project and push it to the `gh-pages` branch.
 
 ### `npm run build` fails to minify
 
