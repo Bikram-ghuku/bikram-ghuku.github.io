@@ -368,10 +368,12 @@ export const extractGitHubSkills = async () => {
   }
 };
 
-export default {
+const export_funs =  {
   fetchGitHubProfile,
   fetchPinnedRepos,
   fetchRepoStats,
   formatReposAsProjects,
   extractGitHubSkills
 }; 
+
+export default export_funs;

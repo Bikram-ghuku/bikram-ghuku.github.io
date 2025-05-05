@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './education.css';
 import { education_data } from './education_data.js';
 import { motion } from 'framer-motion';
-import { School, LocationOn, DateRange, Link as LinkIcon, ExpandMore, ExpandLess } from '@mui/icons-material';
+import { LocationOn, DateRange, Link as LinkIcon, ExpandMore, ExpandLess } from '@mui/icons-material';
 
 function Education({ darkMode }) {
   const [expandedId, setExpandedId] = useState(null);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './projects.css';
 import { projects_data } from '../../projects';
-import { GitHub, Language, Code, Star, CallSplit, Visibility, Refresh, Search, FilterList, KeyboardArrowDown } from '@mui/icons-material';
+import { GitHub, Language, Code, Star, CallSplit, Refresh, Search, FilterList, KeyboardArrowDown } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fetchPinnedRepos, formatReposAsProjects } from '../../services/github';
 
