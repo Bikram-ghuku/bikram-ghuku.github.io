@@ -111,7 +111,7 @@ export const skills_data = [
         id: 20,
         Name: "LangGraph",
         url: "https://www.langchain.com/langgraph",
-        img: "https://www.langchain.com/langchain-and-langgraph.svg"
+        img: "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/langgraph.png"
     },
     {
         id: 21,
