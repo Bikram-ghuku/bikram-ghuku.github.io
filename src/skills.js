@@ -6,6 +6,12 @@ export const skills_data = [
         img: "https://www.python.org/static/community_logos/python-logo-master-v3-TM.png"
     },
     {
+        id: 2,
+        Name: "Typescript",
+        url: "",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png"
+    },
+    {
         id: 3,
         Name: "Javascript",
         url: "https://www.javascript.com/",
@@ -118,5 +124,23 @@ export const skills_data = [
         Name: "Next.js",
         url: "https://nextjs.org/",
         img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/800px-Nextjs-logo.svg.png"
+    },
+    {
+        id: 22,
+        Name: "Kafka",
+        url: "https://kafka.apache.org/",
+        img: "https://juststickers.in/wp-content/uploads/2019/07/apache-kafka.png"
+    },
+    {
+        id: 23,
+        Name: "MySQL",
+        url: "",
+        img: "https://pngimg.com/d/mysql_PNG23.png"
+    },
+    {
+        id: 24,
+        Name: "C++",
+        url: "",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png"
     }
 ]

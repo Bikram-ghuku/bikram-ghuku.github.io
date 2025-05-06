@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 
 function Skills({ darkMode }) {
   const categories = {
-    'Languages': ['Python', 'Javascript', 'HTML', 'CSS', 'Rust', 'Go'],
+    'Languages': ['Python', 'Javascript', 'Typescript','HTML', 'CSS', 'Rust', 'Go', 'C++'],
     'Frameworks & Libraries': ['React', 'Node', 'Express', 'Bootstrap', 'MaterialUI', 'Next.js', 'LangChain', 'LangGraph'],
-    'Databases': ['MongoDB', 'PostgreSQL'],
-    'Tools & Technologies': ['Git', 'Github', 'Docker', 'Kubernetes']
+    'Databases': ['MongoDB', 'PostgreSQL', 'MySQL'],
+    'Tools & Technologies': ['Git', 'Github', 'Docker', 'Kubernetes', 'Kafka']
   }
 
   const getSkillsByCategory = (category) => {
