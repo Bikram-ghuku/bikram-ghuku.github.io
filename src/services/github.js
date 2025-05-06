@@ -126,7 +126,6 @@ export const fetchPinnedRepos = async (maxRepos = 100) => {
     
     // Sort repositories by multiple factors: pinned status, stars, forks, and recency
     const sortedRepos = repos
-      .filter(repo => !repo.fork) // Filter out forks
       .sort((a, b) => {
         // Score based on engagement (stars and forks)
         const aEngagement = (a.stargazers_count * 3) + (a.forks_count * 2);
